@@ -1,0 +1,87 @@
+{
+  "name": "@mostajs/media",
+  "version": "1.0.0",
+  "description": "Image and video capture, editing, and upload components for React/Next.js",
+  "author": "Dr Hamid MADANI <drmdh@msn.com>",
+  "license": "MIT",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./components/ImageCapture": {
+      "types": "./dist/components/ImageCapture.d.ts",
+      "import": "./dist/components/ImageCapture.js",
+      "default": "./dist/components/ImageCapture.js"
+    },
+    "./components/VideoCapture": {
+      "types": "./dist/components/VideoCapture.d.ts",
+      "import": "./dist/components/VideoCapture.js",
+      "default": "./dist/components/VideoCapture.js"
+    },
+    "./components/ImageEditor": {
+      "types": "./dist/components/ImageEditor.d.ts",
+      "import": "./dist/components/ImageEditor.js",
+      "default": "./dist/components/ImageEditor.js"
+    },
+    "./components/MediaGallery": {
+      "types": "./dist/components/MediaGallery.d.ts",
+      "import": "./dist/components/MediaGallery.js",
+      "default": "./dist/components/MediaGallery.js"
+    },
+    "./hooks/useCamera": {
+      "types": "./dist/hooks/useCamera.d.ts",
+      "import": "./dist/hooks/useCamera.js",
+      "default": "./dist/hooks/useCamera.js"
+    },
+    "./hooks/useVideoRecorder": {
+      "types": "./dist/hooks/useVideoRecorder.d.ts",
+      "import": "./dist/hooks/useVideoRecorder.js",
+      "default": "./dist/hooks/useVideoRecorder.js"
+    },
+    "./lib/image-utils": {
+      "types": "./dist/lib/image-utils.d.ts",
+      "import": "./dist/lib/image-utils.js",
+      "default": "./dist/lib/image-utils.js"
+    },
+    "./components/ScreenRecorder": {
+      "types": "./dist/components/ScreenRecorder.d.ts",
+      "import": "./dist/components/ScreenRecorder.js",
+      "default": "./dist/components/ScreenRecorder.js"
+    },
+    "./hooks/useScreenCapture": {
+      "types": "./dist/hooks/useScreenCapture.d.ts",
+      "import": "./dist/hooks/useScreenCapture.js",
+      "default": "./dist/hooks/useScreenCapture.js"
+    },
+    "./types": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/types/index.js",
+      "default": "./dist/types/index.js"
+    }
+  },
+  "files": ["dist", "LICENSE", "README.md"],
+  "keywords": ["camera", "video", "image", "capture", "editor", "crop", "media", "react", "nextjs", "mosta"],
+  "repository": { "type": "git", "url": "https://github.com/apolocine/mosta-media" },
+  "homepage": "https://mostajs.dev/packages/media",
+  "engines": { "node": ">=18.0.0" },
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {},
+  "peerDependencies": {
+    "lucide-react": ">=0.400.0",
+    "react": ">=18"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "lucide-react": "^0.575.0",
+    "react": "^19.0.0",
+    "typescript": "^5.6.0"
+  }
+}
