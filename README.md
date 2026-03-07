@@ -131,6 +131,96 @@ import { MediaGallery } from '@mostajs/media'
 />
 ```
 
+## Integration dans le projet hote
+
+Ce module expose des **composants React** et des **contributions menu** mais ne cree pas de pages Next.js.
+Le projet hote doit creer les pages correspondant aux routes declarees dans le menu (`mediaMenuContribution`).
+
+### 1. Pages a creer
+
+Creez les fichiers suivants dans votre projet Next.js :
+
+**`src/app/dashboard/media/capture/page.tsx`**
+```tsx
+'use client'
+import { ImageCapture } from '@mostajs/media'
+
+export default function MediaCapturePage() {
+  return (
+    <div className="space-y-6">
+      <h1 className="text-2xl font-bold">Capture Image</h1>
+      <ImageCapture
+        onCapture={(dataUrl) => console.log('Captured:', dataUrl)}
+        onClear={() => {}}
+        allowUpload
+      />
+    </div>
+  )
+}
+```
+
+**`src/app/dashboard/media/video/page.tsx`**
+```tsx
+'use client'
+import { VideoCapture } from '@mostajs/media'
+
+export default function MediaVideoPage() {
+  return (
+    <div className="space-y-6">
+      <h1 className="text-2xl font-bold">Capture Video</h1>
+      <VideoCapture onCapture={(blob, url) => console.log('Recorded:', url)} />
+    </div>
+  )
+}
+```
+
+**`src/app/dashboard/media/gallery/page.tsx`**
+```tsx
+'use client'
+import { MediaGallery } from '@mostajs/media'
+
+export default function MediaGalleryPage() {
+  return (
+    <div className="space-y-6">
+      <h1 className="text-2xl font-bold">Galerie Media</h1>
+      <MediaGallery items={[]} columns={3} />
+    </div>
+  )
+}
+```
+
+**`src/app/dashboard/media/screen/page.tsx`**
+```tsx
+'use client'
+import { ScreenRecorder } from '@mostajs/media'
+
+export default function MediaScreenPage() {
+  return (
+    <div className="space-y-6">
+      <h1 className="text-2xl font-bold">Enregistrement Ecran</h1>
+      <ScreenRecorder />
+    </div>
+  )
+}
+```
+
+### 2. Menu dynamique
+
+Le module exporte `mediaMenuContribution` qui declare automatiquement les 4 routes ci-dessus.
+Importez-le dans votre sidebar via le deep import :
+
+```tsx
+import { mediaMenuContribution } from '@mostajs/media/lib/menu'
+```
+
+Passez-le a `buildMenuConfig()` de `@mostajs/menu` avec les autres contributions de modules.
+
+### 3. Pourquoi le projet hote doit creer les pages ?
+
+Les modules `@mostajs/*` sont des **bibliotheques npm** (composants, hooks, utilitaires), pas des applications.
+Next.js App Router exige que les fichiers `page.tsx` soient dans le dossier `src/app/` du projet.
+Un package npm ne peut pas injecter de pages dans le routeur — c'est donc au projet hote de creer ces fichiers wrapper, meme s'ils ne font qu'importer et afficher un composant du module.
+
 ## Hooks
 
 ### `useCamera()`
