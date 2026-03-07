@@ -1,6 +1,6 @@
 {
   "name": "@mostajs/media",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Image and video capture, editing, and upload components for React/Next.js",
   "author": "Dr Hamid MADANI <drmdh@msn.com>",
   "license": "MIT",
