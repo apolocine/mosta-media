@@ -20,6 +20,9 @@ export {
   dataUrlToBlob, fileToDataUrl,
 } from './lib/image-utils'
 
+// Menu contribution
+export { mediaMenuContribution } from './lib/menu'
+
 // Types
 export type {
   CameraOptions, ImageCaptureProps, VideoCaptureProps,

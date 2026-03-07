@@ -64,24 +64,50 @@
       "default": "./dist/types/index.js"
     }
   },
-  "files": ["dist", "LICENSE", "README.md"],
-  "keywords": ["camera", "video", "image", "capture", "editor", "crop", "media", "react", "nextjs", "mosta"],
-  "repository": { "type": "git", "url": "https://github.com/apolocine/mosta-media" },
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
+  "keywords": [
+    "camera",
+    "video",
+    "image",
+    "capture",
+    "editor",
+    "crop",
+    "media",
+    "react",
+    "nextjs",
+    "mosta"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/apolocine/mosta-media"
+  },
   "homepage": "https://mostajs.dev/packages/media",
-  "engines": { "node": ">=18.0.0" },
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "scripts": {
     "build": "tsc",
     "prepublishOnly": "npm run build"
   },
-  "dependencies": {},
   "peerDependencies": {
+    "@mostajs/menu": ">=1.0.2",
     "lucide-react": ">=0.400.0",
     "react": ">=18"
   },
   "devDependencies": {
+    "@mostajs/menu": "^1.0.2",
     "@types/react": "^19.0.0",
     "lucide-react": "^0.575.0",
     "react": "^19.0.0",
     "typescript": "^5.6.0"
+  },
+  "peerDependenciesMeta": {
+    "@mostajs/menu": {
+      "optional": true
+    }
   }
 }
