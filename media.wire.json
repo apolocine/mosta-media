@@ -1,0 +1,11 @@
+{
+  "_doc": "Manifeste de câblage pour @mostajs/media",
+  "package": "@mostajs/media",
+  "version": "1.0.4",
+  "type": "functional",
+
+  "menu": {
+    "name": "mediaMenuContribution",
+    "from": "@mostajs/media/lib/menu"
+  }
+}
